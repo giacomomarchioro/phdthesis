@@ -1,2 +1,2 @@
 # phdthesis
-This is my PhD thesis in LaTeX
+This is my PhD thesis in LaTeX in progress.
