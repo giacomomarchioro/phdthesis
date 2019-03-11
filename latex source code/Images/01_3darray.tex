@@ -1,0 +1,35 @@
+%credits to Steven B. Segletes https://tex.stackexchange.com/a/402674/33846
+\setbox0=\hbox{
+        \begin{tikzpicture}[every node/.style={anchor=north east,fill=white,minimum width=1.4cm,minimum height=7mm}]
+        \matrix (mA) [draw,matrix of math nodes]
+        {
+            d_{1,1,1}  &d_{1,1,1}&  \cdots & d_{1,j,1} \\
+            d_{2,1,1} &d_{1,1,1}&  \cdots & d_{2,1,1} \\
+            \vdots          &  \ddots & \vdots         \\
+            d_{1,2,1}  &d_{1,1,1}&  \cdots & d_{2,1,1} \\
+        };
+        \matrix (mB) [draw,matrix of math nodes] at ($(mA.south west)+(4.9,1.65)$)
+        {
+            d_{2,1}  &d_{1,1,1}&  \cdots & d_{2,1} \\
+            d_{2,1} & d_{1,1,1}& \cdots & d_{2,1} \\
+            \vdots          &  \ddots & \vdots         \\
+            d_{2,1}  & d_{1,1,1}& \cdots & d_{2,1} \\
+        };
+        \matrix (mC) [draw,matrix of math nodes] at ($(mB.south west)+(4.9,1.65)$)
+        {
+            d_{2,1}  & d_{1,1,1}& \cdots & d_{2,1} \\
+            d_{2,1} & d_{1,1,1}& \cdots & d_{2,1} \\
+            \vdots     &  \vdots      &  \ddots & \vdots         \\
+            d_{2,1}  & d_{1,1,1}& \cdots & d_{2,1} \\
+        };
+        \draw[dashed](mA.north east)--(mC.north east);
+        \draw[dashed](mA.north west)--(mC.north west);
+        \draw[dashed](mA.south east)--(mC.south east);
+        \end{tikzpicture}%
+}
+\kern10pt%
+\stackinset{r}{20pt}{b}{8pt}{\rotatebox{-130}{\slantbox[-.81]{$\mid\!\xleftrightarrow{~~~~~\rotatebox{180}{$\Delta y$}~~~~~}\!\mid$}}}{%
+\stackinset{l}{-58pt}{b}{70pt}{\rotatebox{90}{$\mid\!\xleftrightarrow{~~~\rotatebox{-90}{$Scan~step$~~}}\!\mid$}}{%
+\stackinset{c}{-65pt}{b}{-18pt}{$\mid\!\xleftrightarrow{\textstyle Scan~step}\!\mid$}{%
+  \copy0
+}}}

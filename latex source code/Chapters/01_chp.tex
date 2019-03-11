@@ -1,0 +1,178 @@
+\chapter{What is it a surface?}
+\hrule
+\vspace{10pt}
+\begin{quote}
+{ \small This introductory chapter describes the main concepts regarding the digitization of a surface at different scales, and gives an overview of the general problems the scientist may encounter. It focus on the most common techniques used, and formalize and define the terms and the concepts borrowed by different disciplines. We used the coastline mapping problem as an analogy for make acquainted the reader with the general problems. }
+\end{quote}
+\hrule
+
+
+\section{The surface definition}
+\label{sec:rapr}
+The concept of surface  can be quite broad. IUPAC suggests to use this term to refer to the \textit{``outer portion'' of the sample of undefined depth}. While two different compound words are used to disambiguate the meaning and will be adopted in this dissertation, the \textbf{physical surface} defined as \textit{atomic layer of a sample which, if the sample were placed in a vacuum, is the layer ``in contact with'' the vacuum; the outermost atomic layer of a sample}
+\textbf{experimental surface} \textit{That portion of the sample with which there is significant interaction with the particles or radiation used for excitation. It is the volume of sample required for analysis or the volume corresponding to the escape for the emitted radiation or particle, whichever is larger}.
+
+In the field of nanotechnology the term \textbf{interface} is often used and can partially replace the term physical surface because in most of the application, particularly in this field, the sample is not placed in high vacuum but measured in normal atmospheric condition, and we can distinguish two o more \textbf{phases}: entities of a material system which are uniform in chemical composition and physical state. Eventually, is the definition of phase that determine the sample interface and hence our model of the boundary of the material surface. The surface unfortunately is rarely uniform and homogeneous, a more or less hydroxilized  layer is present above most of the metal and organic (check) surfaces, above this layer contaminants are usually deposited if the sample is not handle and store properly. In the field of cultural heritage we won't deal with what IUPAC define as \textbf{clean surface} but with surface where dust and grease accumulated during the century creating several interfaces.
+
+
+\section{Representation of the surface}
+The intent of this introduction
+\subsection{Continuous representations of the surface}
+The surface can be represented by \textbf{scalar-valued function} of the kind $ f(x,y) = z, \mathbb{R}^{2} \rightarrow \mathbb{R}$  
+\textbf{implicit function} 
+\subsection{Discrete representations of the surface}
+\subsubsection*{nD array of distances}
+None of the metrological instruments output directly a continuous representation of the surface but a discrete series of order value that can be eventually reshaped and stored in an array. A simple surface profile can be represented as a 1-dimensional array of the kind:
+$$ P = \begin{bmatrix}
+ d_{1},&  d_{2}, & \dots,& d_{i}, \\
+\end{bmatrix}
+$$
+where $d$ is the distance from a reference line. For some applications we might want to consider the points connected and hence consider this structure as a \textbf{polygonal chain}\footnote{\textbf{Polyline} and \textbf{linestring} are terms normally found in computer science.}.\par A surface can be  represented as a 2-dimensional array, of the kind:
+$$
+S = \begin{bmatrix} 
+    d_{1,1} & d_{1,2} & \dots \\
+    \vdots & \ddots & \\
+    d_{k,1} &        & d_{k,j} 
+    \end{bmatrix}
+$$
+where $d$ still represent the distance but from a reference plane. This 2D array can produce and visualized as a 3-dimensional object, the user may be tempted to refer to this data as 2.5D ( two-and-a-half-dimensional) because it contains also information regarding the position in the third dimension, the usage of this term should be avoided because this terms is usually related to the visual perception\footnote{ three-quarter and pseudo-3D are also found in literature, the letter term even if less in vogue is actually the most preferable in the context of visual perception. An analogous concept is express by the term Trompe-l'œil in history of art.} of the data and not the data structure itself. Furthermore, the term 2.5D can be confused with the Hausdorff dimension that we encounter later on this dissertation.  We will refer to this type of data structure with the term \textbf{nD array of distances} where $n$ is one for the profiles, two for the surfaces and three for what we call surface stacks.
+This representation necessitate that the distances between a measurement and the adjacent one are constant but not necessarily equal among the different axis. For instance the distance between $d_{1,n}$ and $d_{1,n+1}$ must be the same for every $n$ but it does not have to be necessarily the same of the distance between $d_{i,1}$ and  $d_{i+1,1}$. So every nD array of distance could require from one to $n$ additional terms defining what we can call \textbf{scan-step} in the context of scanning system \textbf{pixel size} for imaging systems or \textbf{sampling step} when the surface come from the sampling or discretization of a continuous signal or function \footnote{Unfortunately, often, the term lateral resolution is used, but in fact the lateral resolution can be much lower compared to the scan-step.}. A 3D array of distances can be a very handy structure for multilayer material, we can think this structure as a \textbf{surface stack} where the third dimension can be a distance but also represent time lapses. It is worth mentioning that the dimension of the array do not correspond to the dimension of the object mapped, for instance a 2D array of distance can represents portion of surface while a 3D-array of distances can represents the evolution of a surface in time so describe four dimensions. \par
+The last important parameter for defining uniquely this data structure is the  \textbf{position of the reference line or plane}, in other words at what every single distance correspond. Most of the time if we output directly this data structure form an instrument the distance measured will be from the probe above the surface to the surface itself. Thus greater distances are interpreted as valleys of the surface and smaller distances as peeks. If we subtract a reference plane the interpretation will be the opposite. This may seem obvious to the operator who preform the analysis but may not be so evident for an external user of the data, and the results can be completely misinterpreted if the reference plane is taken for granted.
+
+\begin{figure}
+    \centering
+    \input{Images/01_3darray.tex}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+\subsubsection*{2D and 3D arrays of generic scalars}
+Large amount of analytic data can be described with the N-dimensional array (e.g. hyper-spectral or multi-spectral cubes etc. etc.). Some techniques, for instance X-ray tomography can retrieve the density of the material and hence output (after transformation of the data) a 3D arrays with scalars rappresenting densities. For retrieving the interfaces usually an algorithm (such as marching cube algorithm for 3D arrays) is used: a threshold is applied value of the scalar is used for delimiting the borders of the interface and obtaining what is called an \textbf{isosurface} (or \textbf{isoline} for 2D object). Thus the interface found depends on the threshold choose for separating the phases that the user wants to study. The output is are a series of coordinates that delimit the surface, a list of n-tuple.
+
+\subsubsection*{List of n-tuple}
+A more flexible way to represent the surface is using lists of coordinates respect to an arbitrary origin point. In a more formal way we can define it as a list of n-tuple:
+ \begin{gather*}
+  [(i_1, \ldots, i_n), \\
+   \ldots , \\
+  (i_1, \ldots, i_n)]   
+ \end{gather*}
+Where $n$ is two for a profile and three for a surface. This structure gives us the possibility to describe complex object where a contiunous interface have point with only one coordinate different from the other. 
+
+
+
+\subsection{}
+
+\section{The coastline mapping problems}
+Graham, Douglas, et al. “National Ocean Service Shoreline—Past, Present, and Future.” Journal of Coastal Research, 2003, pp. 14–32. JSTOR, www.jstor.org/stable/25736597.
+
+The reader may found useful dealing with analogous problems at macro scale before diving into the micro and nanoscale.  Historically cartographers where among the first scientists dealing with the problem of determining the boundary of interfaces. Some mathematical tools used in nanometrology have their roots in cartography.%Even if could seem off-topic in this dissertation the reader may benefit from this analogy. 
+If we imagine to map the coastline of a region, we could face different problems:
+\begin{itemize}
+    \item How to define the water-land interface?
+    \item What if the interface oscillate with time due to external factors?
+    \item What instrument to use to take the measurement and at what resolution?
+\end{itemize}
+Beside these problems, the natural aging (in the case of the coastline, cost erosion) occurs but we consider this the phenomenon to be measured rather then a factor affecting the measurement. Hence we start dealing with each problem individually.   
+
+\subsection{Uncertainties in determining the interface.} 
+The first problem we may face is to decide where to define the water-land interface: shall we consider as boarder the wet or muddy land or only where clear water is present? Using instrumental techniques is not always possible to arbitrary choose what to consider the interface, hence the surface we are digitizing. For instance, when using an optical technique the interface detected depends on the interaction of the radiation with the material and the processing carried out by the software for reconstructing the surface. Materials transparent to the optical radiation can cause artifacts or not be detected. Furthermore, the method used for determining the interface may have less accurate results -- or artifact -- depending on the materials analyzed, the way in which we operate the instrument or the features of the surface. To overcome these uncertainties the following actions can be carried out:
+\begin{itemize}
+    \item Compare measurements of the same area with different techniques.
+    \item Use reference standard with certified topography (and or stratigraphy).
+    \item Identify materials that could be critical to acquire. 
+    \item Assess the performance of the instrument and its components under different conditions and over the materials identified in the previous step.
+\end{itemize}
+Eventually as we saw in section \ref{sec:rapr} the surface of a material is heterogeneous and composed of various layers with different thickness, that contribute in different way to the signal collected using the instrument. In general an apriori knowledge of the material and its conservation status can help to predict uncertainties in the final output. 
+
+
+\subsection{Variation of the interface due to external forces.} 
+Even if we convene in the definition of the interface and we optimize our measurement procedure to identify and minimize errors and artifacts; we may experience that the interface position vary during the period of observation. The change of the position of the interface,moreover, may occur during the process of measurement compromising our survey. Coming back to the coastline mapping problem, we may experience these issues in particular during high tide or low tide of the tidal cycle.  Thus, when measuring the coastline we have also to measure the level of the tide, if the cartographer measure the tide level while performing the measuring they call these measurements \textbf{tide-coordinated} otherwise if they predict the tide level using a model (mostly based on historical records) they call these measurements \textbf{tide-predicted}.  
+%cite: Advances in Mapping from Remote Sensor Imagery: Techniques and Applications
+%edited by Xiaojun Yang, Jonathan LiCartographers
+\par The nano-cartographer may face the same issues when measuring the surface of an object at micro or nano level. For instance, the temperature or the relative humidity may affect the positions of the interfaces, because of thermal expansions or swellings due to the absorption of moisture.
+However, reaching temperature-coordinated or RH-coordinated measurements may be harder than it seems. Measuring the temperature or the RH of the object, or worse only of the environment,  would be tantamount to the cartographer involved in the coastline mapping to know the mass of the moon: if there isn't an understanding of the model governing the dynamic of the system and historical records of the object is not possible to ``coordinate'' a set of parameters to the topography of the surface measured. This is due to the fact that different equilibria are involved, and could take a lot of time to reach their stationary state  ---assuming that it exists--- at particular environmental parameters. However, if we leave the object in controlled condition for an appropriate amount of time we can create a model for estimating factor-predicted measurements.   
+
+\section{The coastline paradox}
+\begin{quote}
+    ``An  embarrassing doubt arose as to whether actual frontiers were so intricate as to invalidate that otherwise promising theory'' L.F. Richardson
+\end{quote}
+Solving -- or mitigating --  the coastline mapping problems gives us the confidence for assessing the survey of the interface under investigation. However, when we use the final survey for calculating parameters for describing the interface (e.g. length, area, roughness \ldots) we may find a strong dependence of these parameters with:
+\begin{itemize}
+    \item the constraints we pose at the beginning of the measuring campaign (such as instrument, the resolution and the scan step used).
+    \item the processing procedure we use to calculate them.
+\end{itemize} 
+The axial and lateral resolution of the instrument and the scanning step determine, up to a certain point, the computed metrological parameters of the object. In a work by Lewis F. Richardson, published posthumously in 1960, the author was trying to understand if country with a common boundary are more likely to go to war with one another compared to nations without a common boundary. To measure the coastline Richardson used a divider on printed maps of the countries. The algorithm \ref{algo:1} describes in detail the manual procedure used by Richardson.
+
+\begin{algorithm}[H]
+\vspace{5pt}
+%\SetAlgoLined
+\KwResult{Length of the coastline or generic profile. }
+Choose the distance between the divider spikes (\texttt{the radius})\;
+Choose the \texttt{direction of motion} (clock-wise or counterclockwise)\;
+Choose a \texttt{starting point} on the coastline\;
+Place one spike of the divider on the \texttt{starting point}\;
+ \While{Intersection do not overstep the \texttt{starting point}.}{
+  Find the intersections of the other spike with the border\;
+  Position the spike on the first intersection found following the profile along the \texttt{direction of motion}\;
+  Record that you moved the divider\;
+ }
+ Multiply the times you moved the divider for distance between the divider spikes.
+ \caption{The procedure used by Richardson for determining the length of the coastline of the countries.}
+ \vspace{5pt}
+ \label{algo:1}
+\end{algorithm}
+
+The procedure can be generalized for any polygonal chain, finding the intersections of circles with radius equal to the distances between the spikes of the divider instead of the intersections with the divider. The result of this procedure applied to a profile is shown in figure \ref{fig:0_circles}. 
+
+This an example of the  \textbf{coastline paradox} )\marginpar{Coastline paradox } \ref{} that deal with the problem that the resolution of the instrument and the method used for determining the length of a surface with irregularities at different scales influence the resulting measured length of the surface. 
+%© EuroGeographics for the administrative boundaries
+
+
+
+
+The coastline paradox often cause some improper direct link with the fractal geometry: in fact the coastline paradox do not imply any \textbf{self-similarity}. Hence it is most of the time impossible to predict the properties of the surface morphology at a smaller scale from a less resoluted model of the surface.  Many artificial generated surface are made trough consecutive different finishing steps causing the mixing of different patterns and micro and structure of the material.
+
+
+\begin{figure}
+    \centering
+    \input{Images/01_circleinter.tex}
+    \caption{Example of the generalization of the procedure used by Richardson in his classical paper on a generic profile. Notice that the bold circle intersects the profile in many points, in this case the first intersection found following the profile along the \texttt{direction of motion} is used. }
+    \label{fig:0_circles}
+\end{figure}
+The information acquired scanning the surface determine the \textbf{level of detail} \marginpar{Level of Detail} of the scan.
+
+\section{An ontology of object shapes}
+Looking at figure it can be seen that artworks have a plethora of shapes. A classification of their shapes is relevant for choosing the right tool, evaluating the time and the requirements for its analysis. In table 
+
+ 
+
+\begin{table}[]
+\centering
+\label{tab:artworkshapes}
+\begin{tabular}{cccc}
+\textbf{Category}                & \textbf{Sub-Category} & \textbf{Description} & \textbf{Example}
+\\
+\hline
+\\
+Flat object             &              &   Asperities under the millimeter. & Most paintings           \\
+Curved object           &              & Curvature higher then xx  mm & Russian Icon            \\
+Stiacciato              &              &            & \\
+\multirow{3}{*}{Relief} & Low-relief   & Elements are flatten and distorted       & \\
+                        &              &    Less 50\% of the depth is shown          & \\
+                        & High-relief  & More 50\% of the depth is shown.              & \\
+Tutto tondo             &              &   The object has no clear background.         & Statue.
+\end{tabular}
+\caption{A possible subdivision of artwork shapes using the current art historina terminology.}
+\end{table}
+%sculpture in the round https://www.britannica.com/art/relief-sculpture#ref161321
+%La Caduta degli Angeli Ribelli
+%flatness two set of parallel planes where the entire surface must lay.
+%so if I have the three highest peaks and the three lowest vallyes I should be able to find these two planes. 
+%bpy.ops.mesh.primitive_plane_add(radius = 1.5, rotation=(0,0.5*3.14,0))
+%bpy.ops.mesh.primitive_uv_sphere_add(location = (0.4,0,0))
+%bpy.ops.mesh.primitive_uv_sphere_add(location = (0.7,0,0))
+%bpy.ops.mesh.primitive_cylinder_add(depth = 0.7,rotation=(0,0.5*3.14,0))
+\section{The mutli-scale acquistion}
+Some part may be acquired at higher definition
+
+

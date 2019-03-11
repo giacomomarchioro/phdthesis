@@ -1,0 +1,72 @@
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}                
+\usepackage[polutonikogreek,german,english]{babel}
+%add italian if you want to write it in italian 
+\usepackage{graphicx}
+   \graphicspath{{Images/}}
+\usepackage[english]{varioref}
+\usepackage{lipsum}
+\usepackage{ccicons}
+\usepackage{multirow}
+\usepackage{tikz,stackengine,mathtools}
+\usepackage{pgfplots}
+%This is the font to use
+\usepackage{tgbonum}
+%Math symbols
+\usepackage{amssymb}
+\usepackage{amsmath}
+%For code
+\usepackage{listings}
+%For pseudo code and algorithms
+\usepackage[options]{algorithm2e}
+%For external contents box
+\usepackage[most]{tcolorbox}
+\usepackage{wrapfig}
+
+
+
+%Just for the 3Dmatrix
+\usetikzlibrary{matrix,calc}
+\newsavebox{\foobox}
+\newcommand{\slantbox}[2][\slantvalue]{\mbox{%
+        \sbox{\foobox}{#2}%
+        \hskip\wd\foobox
+        \pdfsave
+        \pdfsetmatrix{1 0 #1 1}%
+        \llap{\usebox{\foobox}}%
+        \pdfrestore
+}}
+%Keep it at the end
+\usepackage{hyperref}
+% Add the new commands defined
+\input{environments.tex}
+% Indice dei nomi
+\begin{document}
+\input{FrontBackMatters/titlepage.tex}
+\input{FrontBackMatters/licence.tex}
+\input{FrontBackMatters/abstract.tex}
+\input{FrontBackMatters/preface.tex}
+\frontmatter
+\tableofcontents
+\listoftables
+\listoffigures
+% All the chapters goes here
+\mainmatter
+
+\input{Chapters/00_intro.tex}
+\addcontentsline{toc}{chapter}{Introduction} %this will ad it to the toc
+\input{Chapters/01_chp.tex}
+\input{Chapters/02_chp.tex}
+\input{Chapters/03_chp.tex}
+\input{Chapters/04_chp.tex}
+\input{Chapters/05_chp.tex}
+\input{Chapters/06_chp.tex}
+\input{Chapters/07_chp.tex}
+\input{Chapters/08_chp.tex}
+\input{Chapters/09_chp.tex}
+\input{Chapters/99_Appendix_A.tex}
+%\input{Chapters/05_chp.tex}
+\bibliographystyle{plain}
+\bibliography{Zotero} 
+\end{document}

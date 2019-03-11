@@ -1,0 +1,69 @@
+\chapter{Storing information regarding the surface}
+
+\hrule
+\vspace{10pt}
+\begin{quote}
+{ \small In this chapter will be discuss the format and the meta-data used for storing the information regagrding the surfaces acquired with different techniques.}
+\end{quote}
+\hrule
+
+
+
+\section*{Introduction}
+%Questa è un'introduzione non numerata che non compare nell'indice.
+
+\textbf{punctual analysis} \textbf{single-spot analysis} compared to \textbf{mapping analysis} \textbf{scanning analysis} \textbf{imaging analysis}
+
+\section{Data mapping}
+\section{Data formats}
+
+\textbf{Data trasformation}
+Some file-format can be converted to back-and-forward to others without losing any information. \textbf{isomorph}
+
+During the last decades several formats have been developed to store information coming from surface topography techniques, in the meanwhile ISO commission attempted to standardize the structure the meta-data of the file format for some of them (AFM and SPM with ISO 28600:2011) and give a general overview of the software measurement standards in ISO 5436-2:2012. Nevertheless there are still a lot of ambiguities regarding the usage the terms for describing the file. 
+This is also partially due to the increased number of techniques used in the field of surface reconstruction that require particular data structures to store all the relevant information regarding the acquisition of surface. In general 
+Furthermore the fact that ISO standards are not open-access decrease the chance to adopt the to the larger scientific community. In 2008 OpenGPS\copyright\space  consortium tried to address to these issues, and overcome the current limitations of ISO 5436-2 with an open format called \textit{.x3p}.%\footnote{\url{http://open-gps.sourceforge.net/Meetings/20080229_ISO54362_XML.pdf}}
+This format is now part 72 of the ISO 25178 but is unmaintained by the OpenGPS consortium and now is partially mantained by OpenFMC (Open Forensic Metrology Consortium)
+ %source https://physics.nist.gov/VSC/jsp/Database.jsp?start=0&end=20&constraint=General+Search&searchCriteria=&SearchAction=detail&dno=24
+ 
+ 
+ \textit{.sdf}
+ \begin{lstlisting}
+ aNIST-1.0
+ManufacID		= square
+CreateDate		= 010620090756
+ModDate		= 010620090756
+NumPoints		= 8000
+NumProfiles		= 1
+Xscale		= 0.5e-6
+Yscale		= 0
+Zscale		= 1.0e-6
+Zresolution		= -1.0
+Compression		= 0
+DataType		= 7
+CheckType		= 0
+*
+
+1.0
+[ series of values...]
+*
+ \end{lstlisting}
+
+
+For Raman and Infrared spectroscopy
+JCAMP-DX
+
+\section{Measurement-centric and  sample-centric approach}
+We have seen that the process of describing the data-set adding meta and para data can be accomplished with the linking with a unique ID. However, different organization of the data into data-set can be performed.
+We define two approaches that can be used for exporting the data into data-set that can be analyzed by the scientific community. The first one, build the data-set around the measurement: once we have performed a series of measurements with the same instrument of different samples we use the sample database and the environmental database for adding the meta-data to the sample. For instance, if the laboratory has to perform a single type of analysis over the samples the data-set will be structured around the measurment. We call this approach measurement-centric. 
+
+The second approach is to start from the sample entry of the database and look for all the analyses preformed during the sample history. 
+
+This distinction might be trivial but it's actually an important step to define in the organization of the data-set. For instance, if we scan an artwork shall we consider the author of the artwork as a meta-data field or as a datum itself. Strictly speaking it's not an information about the data itself (for instance the date of the acquisition) but about the object represented by the data. 
+
+\section{Meta-data and data fields strictly related to Cultural Heritage objects}
+Up to now we analyzed conventional meta-data fields valid for describing generic measurements and acquisitions. Different ontology have been written regarding cultural heritage objects can be found in literature. In the next sections I add some in formations that in my opinion could be useful to incorporate into the praxis of the description of the object for its conservation, understanding and valorization.
+
+\subsection{Observation point}
+Is not necessary true that all the surface artwork has the same importance in terms of historical and artistic value. Some part of the artwork may have higher priority. Trivially the back of a painting has not the same value compared to the front. Of course, this does not mean that the conservator and the historian should not take care of it, but simply that it may be treated differently compared to the other part. This is true also for \textit{tutto-tondo} artwork: for instance the side of the base in contact with the ground, has not the same value of the front and could be not worth to be digitized. The question that may arise is how can we consider what is the most significant part of the artwork?  This can be related to the view of the object that was initially intended by the artist. We can define hence a set of \textbf{observation points} that where originally  \marginpar{observation points} thought to be the positions where the observers should stand for watch the artwork. Two famous artworks highlight the importance of knowing and storing the observation points. Holbein Ambassadors and the David of Michelangelo.
+The next question is how can we encode this information so that can be interpreted?
