@@ -1,0 +1,8 @@
+This data has been extracted from https://www.ngdc.noaa.gov/mgg/shorelines/data/gshhg/latest/gshhg-shp-2.3.7.zip (last modified 2018-03-02 18:42).
+GSHHG is released under the GNU Lesser General Public license, and is developed and maintained by Dr. Paul Wessel, SOEST, University of Hawai'i, 
+and Dr. Walter H. F. Smith, NOAA Laboratory for Satellite Altimetry.
+
+We used the shapefile in \gshhg-shp-2.3.7\GSHHS_shp\f we extracted the ID 15 and converted to linestring.
+
+The data extracted is stored here for enanche the reproducibility of the experiment in long term avoiding storing the whole dataset.
+Please refer to the original data set documentation.
