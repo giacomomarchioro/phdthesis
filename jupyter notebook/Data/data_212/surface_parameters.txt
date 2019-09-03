@@ -1,0 +1,30 @@
+Total Profile
+
+Raw Data
+
+Uncertainty Information:
+Assume that Z co-ordinates have standard uncertainty of 1.9 nm (1% of Pq), 
+X co-ordinates have standard uncertainty of 10.0 nm (2% of spacing), and
+measurement errors on Z and X co-ordinates are Gaussian distribution and independent.
+Percent Coverage  = 95%
+
+			Nominal value		Mean value			Standard Uncertainty
+--------------------------------------------------------------------------------------------------------------------------------------------
+Pa			0.15 um			0.15001 um			0.042 nm
+Pq			0.19038 um			0.19039 um			0.043 nm
+Psk			0.5144			0.51432			0.0012
+Pku			3.27344			3.27322			0.0025
+Pz			1.1836 um			1.18433 um			4.71 nm
+Pdq			0.06473 um/um		0.06506 um/um		2.53 nm/um
+Pt			1.1836 um			1.18433 um			4.71 nm
+Pp			0.6974 um			0.69846 um			2.93 nm
+Pv			0.4862 um			0.48592 um			3.61 nm
+PSm			34.54437 um		34.3417 um		1.48 um
+Pc			0.42697 um		0.4271 um		0.0049 um
+(Sm and Pc were calculated based on +/-5% of Pz, 1% of the sampling length)
+
+Note: Uncertainty due to rounding errors and truncation errors is ignored because its uncertainty value is very small when compared with values of other sources of uncertainty. 
+For more information, see Section F.2.2.3 of "American National Standard for Calibration - U.S. Guide to the Expression of Uncertainty in Measurement"
+============================================================================================================================================
+
+
