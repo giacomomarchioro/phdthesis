@@ -8,19 +8,20 @@ This temporary script file is located here:
 import numpy as np
 import matplotlib.pyplot as plt
 
+plt.rcParams['svg.fonttype'] = 'none'
 plt.xlim(-1,11)
 plt.ylim(0,10)
 for i in range(1,10,4):
-    plt.arrow(0,i,10,0, shape='full', lw=2, length_includes_head=True, head_width=0.5, alpha =0.7)
+    plt.arrow(0,i,10,0, shape='full', lw=2, color='grey',fc='grey',ec='grey', length_includes_head=True, head_width=0.5, alpha =0.7)
 
 for i in range(3,8,4):
-    plt.arrow(10,i,-10,0, shape='full', lw=2, length_includes_head=True, head_width=0.5, alpha =0.7)
+    plt.arrow(10,i,-10,0, shape='full', lw=2,color='grey',fc='grey', ec='grey', length_includes_head=True, head_width=0.5, alpha =0.7)
 
 for i in range(1,10,4):
-    plt.arrow(10,i,0,-2, shape='full', lw=2, length_includes_head=True, head_width=0.5, alpha =0.7)
+    plt.arrow(10,i,0,-2, shape='full', lw=2,color='grey',fc='grey', ec='grey', length_includes_head=True, head_width=0.5, alpha =0.7)
 
 for i in range(3,8,4):
-    plt.arrow(0,i,0,-2, shape='full', lw=2, length_includes_head=True, head_width=0.5, alpha =0.7)
+    plt.arrow(0,i,0,-2, shape='full', lw=2,color='grey', fc='grey',ec='grey', length_includes_head=True, head_width=0.5, alpha =0.7)
 
 bbox_props = dict(boxstyle="circle,pad=0.3", fc="black", ec="w", lw=2)
 j=0
@@ -43,4 +44,5 @@ plt.text(0,9.3,'Offset', fontsize=16 )
 plt.text(9,9.3,'Offset', fontsize=16 )
 plt.yticks(range(0,10),range(180,190)[::-1])
 plt.xticks(range(0,10),range(25,35))
-plt.show()
+plt.savefig('LeftDownRightDown.svg')
+
