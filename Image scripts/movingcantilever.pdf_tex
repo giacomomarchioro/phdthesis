@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.48.5, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'Signals.pdf' (pdf, eps, ps)
+%% Accompanies image file 'movingcantilever.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{640bp}%
+    \setlength{\unitlength}{674.19838867bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,11 +48,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.3375)%
-    \put(0,0){\includegraphics[width=\unitlength]{Signals.pdf}}%
-    \put(0.81413919,0.07735601){\makebox(0,0)[lb]{\smash{Resulting profile}}}%
-    \put(0.81413919,0.13468883){\makebox(0,0)[lb]{\smash{Signal 1}}}%
-    \put(0.81413919,0.1729107){\makebox(0,0)[lb]{\smash{Signal 2}}}%
-    \put(0.81413919,0.23024352){\makebox(0,0)[lb]{\smash{Signal 3}}}%
+  \begin{picture}(1,0.28891918)%
+    \put(0,0){\includegraphics[width=\unitlength]{movingcantilever.pdf}}%
+    \put(0.40858431,0.28996306){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.24339321\unitlength}\raggedright cantilever\end{minipage}}}%
+    \put(0.01977657,0.07515098){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.07119566\unitlength}\raggedright a)\end{minipage}}}%
+    \put(0.55506245,0.07383255){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.08701689\unitlength}\raggedright b)\end{minipage}}}%
+    \put(0.49177744,0.20435792){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.19644727\unitlength}\raggedright las\end{minipage}}}%
+    \put(0.43508458,0.22281606){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.29005637\unitlength}\raggedright laser spots\end{minipage}}}%
   \end{picture}%
 \endgroup%

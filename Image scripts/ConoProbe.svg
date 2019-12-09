@@ -7,16 +7,105 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="744.09448819"
-   height="1052.3622047"
+   width="533.32617"
+   height="212.74969"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="Nuovo documento 1">
+   sodipodi:docname="ConoProbe.svg">
   <defs
-     id="defs4" />
+     id="defs4">
+    <linearGradient
+       id="linearGradient5860">
+      <stop
+         id="stop5868"
+         offset="0"
+         style="stop-color:#787878;stop-opacity:1;" />
+      <stop
+         style="stop-color:#787878;stop-opacity:0;"
+         offset="0.5"
+         id="stop5870" />
+      <stop
+         style="stop-color:#787878;stop-opacity:1;"
+         offset="1"
+         id="stop5864" />
+    </linearGradient>
+    <marker
+       style="overflow:visible"
+       id="DistanceEnd"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DistanceEnd">
+      <g
+         id="g2301">
+        <path
+           style="fill:none;stroke:#ffffff;stroke-width:1.14999998;stroke-linecap:square"
+           d="M 0,0 -2,0"
+           id="path2316"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:#000000;fill-rule:evenodd;stroke:none"
+           d="M 0,0 -13,4 -9,0 -13,-4 0,0 z"
+           id="path2312"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square"
+           d="M 0,-4 0,40"
+           id="path2314"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DistanceStart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DistanceStart">
+      <g
+         id="g2300">
+        <path
+           style="fill:none;stroke:#ffffff;stroke-width:1.14999998;stroke-linecap:square"
+           d="M 0,0 2,0"
+           id="path2306"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:#000000;fill-rule:evenodd;stroke:none"
+           d="M 0,0 13,4 9,0 13,-4 0,0 z"
+           id="path2302"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square"
+           d="M 0,-4 0,40"
+           id="path2304"
+           inkscape:connector-curvature="0" />
+      </g>
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5860"
+       id="linearGradient5866"
+       x1="241.43549"
+       y1="406.53452"
+       x2="467.16666"
+       y2="406.53452"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(47.311828,-174.19355)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5860"
+       id="linearGradient5888"
+       x1="217.77957"
+       y1="420.1041"
+       x2="474.69354"
+       y2="420.1041"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.85714287,69.892473,-126.00664)" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,17 +113,23 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.71"
-     inkscape:cx="104.57746"
-     inkscape:cy="520"
+     inkscape:zoom="0.93"
+     inkscape:cx="420.52643"
+     inkscape:cy="-73.272214"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="916"
-     inkscape:window-x="0"
+     inkscape:window-width="1640"
+     inkscape:window-height="901"
+     inkscape:window-x="189"
      inkscape:window-y="0"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -43,27 +138,93 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Livello 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-11.267606,-109.59375)">
     <rect
-       style="opacity:0.98999999;fill:none;stroke:#000000;stroke-width:2.75;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.37109375;stroke-dasharray:none;stroke-dashoffset:1.71999977"
-       id="rect2987"
-       width="209.85915"
-       height="266.19717"
-       x="52.112675"
-       y="67.855141" />
-    <rect
-       style="opacity:0.98999999;fill:none;stroke:#000000;stroke-width:2.75;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.37109375;stroke-dasharray:none;stroke-dashoffset:1.71999977"
+       style="opacity:0.98999999;fill:none;stroke:#000000;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.37109375;stroke-dasharray:none;stroke-dashoffset:1.71999977"
        id="rect3765"
-       width="69.014084"
-       height="126.76057"
-       x="261.97183"
-       y="187.57344" />
-  </g>
+       width="52.112675"
+       height="104.22535"
+       x="235.21126"
+       y="181.93965" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 61.971831,318.55937 173.239439,0 0,-208.45071 -223.943664,0"
+       id="path3097"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 70.422535,290.39035 115.492955,0 c 0,0 25.27627,-3.78902 25.27627,-14.42053 0,-10.6315 0,-165.11907 0,-165.11907"
+       id="path3099"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DistanceStart);marker-mid:none;marker-end:url(#DistanceEnd)"
+       d="m 288.17205,150.21164 129.03756,0"
+       id="path3879"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DistanceStart);marker-mid:none;marker-end:url(#DistanceEnd)"
+       d="m 476.34409,282.98583 -118.28405,0"
+       id="path5096"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:url(#linearGradient5888);fill-opacity:1;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 288.17204,279.2439 0,-90.32259 255.91398,90.32259 0,-90.32259 z"
+       id="path5878"
+       inkscape:connector-curvature="0" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5890"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(15.053763,2.1505376)"><flowRegion
+         id="flowRegion5892"><rect
+           id="rect5894"
+           width="170.96774"
+           height="58.064518"
+           x="37.634407"
+           y="128.70627" /></flowRegion><flowPara
+         id="flowPara5896"
+         style="font-size:22px">Cono Probe</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5898"
+       style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion5900"><rect
+           id="rect5902"
+           width="169.89247"
+           height="44.086021"
+           x="265.5914"
+           y="84.620247"
+           style="font-size:18px" /></flowRegion><flowPara
+         id="flowPara5904"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5906"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(7.5268817,25.806452)"><flowRegion
+         id="flowRegion5908"><rect
+           id="rect5910"
+           width="174.19356"
+           height="31.1828"
+           x="261.29031"
+           y="85.695518" /></flowRegion><flowPara
+         id="flowPara5912"
+         style="font-size:20px">working distance</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5914"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(36.55914,-23.655914)"><flowRegion
+         id="flowRegion5916"><rect
+           id="rect5918"
+           width="152.68817"
+           height="30.107531"
+           x="310.75269"
+           y="321.17938" /></flowRegion><flowPara
+         id="flowPara5920"
+         style="font-size:20px">working range</flowPara></flowRoot>  </g>
 </svg>

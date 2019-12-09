@@ -1,0 +1,1 @@
+{"result": "Passed", "plot-quality": "Passed", "user": "GM", "Total-QC": "Passed", "workingdistance": "Passed", "SNR-QC": "Passed", "Inclination": "Passed"}
