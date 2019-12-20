@@ -1,0 +1,313 @@
+<!-- data.dtd
+
+SML: Surface Markup Language - version: alpha
+There are five major elements in this DTD: Part, Process, Measurement Conditions, Data File, Analysis Data
+-->
+<!ELEMENT DATA (PART?,PROCESS?,MEASUREMENT?,DATAFILE,ANALYSIS)>
+
+<!--
+Part information
+	PART_NAME: required. Name of a part
+	PART_DATE: optional. Date when a part was made
+	PART_MANUFACTURER: optional. Manufacturer who made the part
+      PART_DESCRIPTION: optional. Description of the part
+	PART_ADDITIONAL_INFO: optional. Additional part information 
+-->
+<!ELEMENT PART (PART_NAME,PART_DATE?,PART_MANUFACTURER?,PART_DESCRIPTION?,PART_ADDITIONAL_INFO?)>
+<!ELEMENT PART_NAME (#PCDATA)>
+<!ELEMENT PART_DATE (#PCDATA)>
+<!ELEMENT PART_MANUFACTURER (#PCDATA)>
+<!ELEMENT PART_DESCRIPTION (#PCDATA)>
+<!ELEMENT PART_ADDITIONAL_INFO (#PCDATA)>
+
+<!--
+Process information
+	PROCESS_NAME: required. Name of the process
+	PROCESS_DESCRIPTION: optional. Description of the process
+	PROCESS_DATE: required. Date of the process
+      PROCESS_TEMPERATURE: optional. Temperature
+	PROCESS_DEPTH_CUT: optional. Depth of cut
+	PROCESS_TOOL_SPEED: optional. Tool Speed
+	PROCESS_TOOL_LIFE: optional. Tool Life
+	PROCESS_ADDITIONAL_INFO: optional. Additional process information
+-->
+<!ELEMENT PROCESS (PROCESS_NAME, PROCESS_DESCRIPTION?,PROCESS_DATE?,PROCESS_TEMPERATURE?,PROCESS_DEPTH_CUT?,PROCESS_TOOL_SPEED?,PROCESS_TOOL_LIFE?,PROCESS_ADDITIONAL_INFO?)>
+<!ELEMENT PROCESS_NAME (#PCDATA)>
+<!ELEMENT PROCESS_DESCRIPTION (#PCDATA)>
+<!ELEMENT PROCESS_DATE (#PCDATA)>
+<!ELEMENT PROCESS_TEMPERATURE (#PCDATA)>
+<!ELEMENT PROCESS_DEPTH_CUT (#PCDATA)>
+<!ELEMENT PROCESS_TOOL_SPEED (#PCDATA)>
+<!ELEMENT PROCESS_TOOL_LIFE (#PCDATA)>
+<!ELEMENT PROCESS_ADDITIONAL_INFO (#PCDATA)>
+
+<!--
+Measurement information
+	MEASUREMENT_INSTRUMENT_TYPE: required. Type of the instrument measures the part
+	MEASUREMENT_TEMPERATURE: optional. measurement temperature
+	MEASUREMENT_TIP_RADIUS: optional. Tip radius value
+	MEASUREMENT_TIP_ANGLE: optional. Angle of the spherical portion of the probe in degrees
+	MEASUREMENT_TIP_FORCE: optional. tip force value
+	MEASUREMENT_VERTICAL_DIGITIZATION: optional. Vertical Digitization
+	MEASUREMENT_HORIZONTAL_DIGITIZATION: optional. Horizontal Digitization
+	MEASUREMENT_DRIVE_SPEED: optional. drive speed in mm/s
+	MEASUREMENT_PROBE_RANGE: optional. probe range
+	MEASUREMENT_OFFSET_mm: optional. Offset of the start of the measurement in mm from the origin
+	MEASUREMENT_LAST_CALIBRATION: optional. Date and time of last calibration
+	MEASUREMENT_DATE: optional. date when the part was measured
+	MEASUREMENT_ADDITIONAL_INFO: optional. Additional measurement information
+-->
+<!ELEMENT MEASUREMENT (MEASUREMENT_INSTRUMENT_TYPE, MEASUREMENT_TEMPERATURE?, MEASUREMENT_TIP_RADIUS?, MEASUREMENT_TIP_ANGLE?,MEASUREMENT_TIP_FORCE?, MEASUREMENT_VERTICAL_DIGITIZATION?, MEASUREMENT_HORIZONTAL_DIGITIZATION?, MEASUREMENT_DRIVE_SPEED?, MEASUREMENT_PROBE_RANGE?, MEASUREMENT_OFFSET_mm?,MEASUREMENT_LAST_CALIBRATION?,MEASUREMENT_DATE?, MEASUREMENT_ADDITIONAL_INFO?)>
+<!ELEMENT MEASUREMENT_INSTRUMENT_TYPE (#PCDATA)>
+<!ELEMENT MEASUREMENT_TEMPERATURE (#PCDATA)>
+<!ELEMENT MEASUREMENT_TIP_RADIUS (#PCDATA)>
+<!ELEMENT MEASUREMENT_TIP_FORCE (#PCDATA)>
+<!ELEMENT MEASUREMENT_TIP_ANGLE (#PCDATA)>
+<!ELEMENT MEASUREMENT_VERTICAL_DIGITIZATION (#PCDATA)>
+<!ELEMENT MEASUREMENT_HORIZONTAL_DIGITIZATION (#PCDATA)>
+<!ELEMENT MEASUREMENT_DRIVE_SPEED (#PCDATA)>
+<!ELEMENT MEASUREMENT_PROBE_RANGE (#PCDATA)>
+<!ELEMENT MEASUREMENT_OFFSET_mm (#PCDATA)>
+<!ELEMENT MEASUREMENT_LAST_CALIBRATION (#PCDATA)>
+<!ELEMENT MEASUREMENT_DATE (#PCDATA)>
+<!ELEMENT MEASUREMENT_ADDITIONAL_INFO (#PCDATA)>
+
+<!--
+Data File information
+	FILENAME: required. Data file name
+	UNITS: required. units m, mm, um, nm
+	NUMPOINTS: required. Number of data points
+	SPACING: required. Spacing between two data points in x direction
+	KCAL: optional. Calibration constant KCAL (micron/mv).
+	DATA_TYPE: optional. Indicate data file is 2D or 3D
+	POSITION_NO: optional. Label where a profile is taken on a surface
+	TRACE_NO: optional. Label number of trace
+	DATA_POINT_VALUES: required. values of data points
+-->
+<!ELEMENT DATAFILE (FILENAME,UNITS, NUMPOINTS,SPACING,KCAL?,POSITION_NO?,TRACE_NO?,DATA_TYPE?,DATA_POINT_VALUES)>
+<!ELEMENT FILENAME (#PCDATA)>
+<!ELEMENT UNITS (#PCDATA)>
+<!ELEMENT NUMPOINTS (#PCDATA)>
+<!ELEMENT SPACING (#PCDATA)>
+<!ELEMENT KCAL (#PCDATA)>
+<!ELEMENT DATA_TYPE (#PCDATA)>
+<!ELEMENT POSITION_NO (#PCDATA)>
+<!ELEMENT TRACE_NO (#PCDATA)>
+<!ELEMENT DATA_POINT_VALUES (#PCDATA)>
+
+<!--
+Analysis Data information
+	CURVATURE_REMOVAL: optional. Information ragarding least square curve fitting
+	FILTER: optional. Filtering information
+	STATISTICAL_ANALYSIS: optional. PSD or Correlation information
+-->
+<!ELEMENT ANALYSIS (CURVATURE_REMOVAL?, FILTER?, STATISTICAL_ANALYSIS?)>
+
+<!--
+Curvature removal information
+	LSQ_COEFF: required. Least Square Cofficients
+-->
+<!ELEMENT CURVATURE_REMOVAL (LSQ_COEFF)>
+<!ELEMENT LSQ_COEFF (#PCDATA)>
+
+<!--
+Filtering information
+	FILTER_TYPE: required. Filter Type (Gaussian or Two RC filter)
+	SHORT_CUTOFF: optional. Short Cutoff
+	LONG_CUTOFF: required. Long Cutoff
+	METHOD: required. Filtering implementation method such as covolution, recursive, or FFT
+	LSQ_REMOVED_PROFILE: optional. Least Square Removed Profile
+	SHORT_CUTOFF_PROFILE: optional. Primary Profile
+	RAW_PROFILE: optional. Total Profile
+	ROUGHNESS: required. Roughness Profile
+	WAVINESS: required. Waviness Profile
+-->
+<!ELEMENT FILTER (FILTER_TYPE,SHORT_CUTOFF?,LONG_CUTOFF,UNITS,METHOD,SHORT_CUTOFF_PROFILE?,LSQ_REMOVED_PROFILE?, RAW_PROFILE?,ROUGHNESS,WAVINESS)>
+<!ELEMENT FILTER_TYPE (#PCDATA)>
+<!ELEMENT SHORT_CUTOFF (#PCDATA)>
+<!ELEMENT LONG_CUTOFF (#PCDATA)>
+<!ELEMENT METHOD (#PCDATA)>
+
+<!--
+Least Square Removed Profile's surface parameters information
+	Pa: required. Arithmetical mean deviation of the assessed profile 
+	Pq: required. Root mean square deviation of the assessed profile 
+	Psk: required. Skewness of the assessed profile 
+	Pku: required. Kurtosis of the assessed profile 
+	Pz: required. Maximum height of profile  
+	PDq: required. root mean square slope of the assessed profile
+	PSm: required. mean width of the profile elements
+	Pc: required. mean height of the profile elements
+	Pt: required. Total Height of Profile 
+	Pp: required. Maximum Profile Peak Height 
+	Pv: required. Maximum Profile Valley Depth 
+	UNITS: required. units m, mm, um, nm
+ SM_SETTING: required. Indicate Heigh and spacing discrimination for Sm Calculation
+ PC_SETTING: required. Indicate Heigh and spacing discrimination for Pc Calculation
+-->
+<!ELEMENT LSQ_REMOVED_PROFILE (LSQ_REMOVED_PROFILE_SURFACE_PARAMETERS?)>
+<!ELEMENT LSQ_REMOVED_PROFILE_SURFACE_PARAMETERS (PA,PQ,PSK,PKU,PZ,PDq,PSm,Pc,Pt,Pp,Pv,UNITS,SM_SETTING,PC_SETTING)>
+<!ELEMENT PA (#PCDATA)>
+<!ELEMENT PQ (#PCDATA)>
+<!ELEMENT PSK (#PCDATA)>
+<!ELEMENT PKU (#PCDATA)>
+<!ELEMENT PZ (#PCDATA)>
+<!ELEMENT PDq (#PCDATA)>
+<!ELEMENT PSm (#PCDATA)>
+<!ELEMENT Pc (#PCDATA)>
+<!ELEMENT Pt (#PCDATA)>
+<!ELEMENT Pp (#PCDATA)>
+<!ELEMENT Pv (#PCDATA)>
+<!ELEMENT SM_SETTING (#PCDATA)>
+
+<!ELEMENT PC_SETTING (#PCDATA)>
+
+<!--
+Primary Profile's surface parameters information
+	Pa: required. Arithmetical mean deviation of the assessed profile 
+	Pq: required. Root mean square deviation of the assessed profile 
+	Psk: required. Skewness of the assessed profile 
+	Pku: required. Kurtosis of the assessed profile 
+	Pz: required. Maximum height of profile  
+	PDq: required. root mean square slope of the assessed profile
+	PSm: required. mean width of the profile elements
+	Pc: required. mean height of the profile elements
+	Pt: required. Total Height of Profile 
+	Pp: required. Maximum Profile Peak Height 
+	Pv: required. Maximum Profile Valley Depth 
+	SHORT_CUTOFF_PROFILE_NUMBPOINTS: required. number of data points of the primary profile
+      SHORT_CUTOFF_PROFILE_DATA_POINT_VALUES: required. data points of the primary profile
+	UNITS: required. units m, mm, um, nm
+	SHORT_CUTOFF_PROFILE_NUMBPOINTS: required. number of data points 
+-->
+<!ELEMENT SHORT_CUTOFF_PROFILE (SHORT_CUTOFF_PROFILE_SURFACE_PARAMETERS?, SHORT_CUTOFF_PROFILE_NUMBPOINTS,SHORT_CUTOFF_PROFILE_DATA_POINT_VALUES)>
+<!ELEMENT SHORT_CUTOFF_PROFILE_SURFACE_PARAMETERS (PA,PQ,PSK,PKU,PZ,PDq,PSm,Pc,Pt,Pp,Pv,UNITS,SM_SETTING,PC_SETTING)>
+<!ELEMENT SHORT_CUTOFF_PROFILE_NUMBPOINTS (#PCDATA)>
+<!ELEMENT SHORT_CUTOFF_PROFILE_DATA_POINT_VALUES (#PCDATA)>
+
+<!--
+Raw Profile's surface parameters information
+	Pa: required. Arithmetical mean deviation of the assessed profile 
+	Pq: required. Root mean square deviation of the assessed profile 
+	Psk: required. Skewness of the assessed profile 
+	Pku: required. Kurtosis of the assessed profile 
+	Pz: required. Maximum height of profile  
+	PDq: required. root mean square slope of the assessed profile
+	PSm: required. mean width of the profile elements
+	PC: required. mean width of the profile elements
+	Pt: required. Total Height of Profile 
+	Pp: required. Maximum Profile Peak Height 
+	Pv: required. Maximum Profile Valley Depth 
+	UNITS: required. units m, mm, um, nm
+-->
+<!ELEMENT RAW_PROFILE (RAW_PROFILE_SURFACE_PARAMETERS?)>
+<!ELEMENT RAW_PROFILE_SURFACE_PARAMETERS (PA,PQ,PSK,PKU,PZ,PDq,PSm,PC,Pt,Pp,Pv, UNITS,SM_SETTING,PC_SETTING)>
+
+<!--
+Roughness Profile's surface parameters information
+	Ra: required. Arithmetical mean deviation of the assessed profile 
+	Rq: required. Root mean square deviation of the assessed profile 
+	Rsk: required. Skewness of the assessed profile 
+	Rku: required. Kurtosis of the assessed profile 
+	Rz: required. Maximum height of profile  
+	RDq: required. root mean square slope of the assessed profile
+	RSm: required. mean width of the profile elements
+	Rc: required. mean width of the profile elements
+	Rt: required. Total Height of Profile 
+	Rp: required. Maximum Profile Peak Height 
+	Rv: required. Maximum Profile Valley Depth 
+       UNITS: required. units m, mm, um, nm
+	ROUGHNESS_NUMPOINTS: required. number of data points 
+	ROUGHNESS_DATA_POINT_VALUES: required. Roughness data points
+	UNITS: required. units m, mm, um, nm
+	CALCULATION_TYPE: required. indicate if the calculation is based on the sampling length or the evaluation length 
+-->
+<!ELEMENT ROUGHNESS (ROUGHNESS_SURFACE_PARAMETERS?,ROUGHNESS_NUMPOINTS,ROUGHNESS_DATA_POINT_VALUES)>
+<!ELEMENT ROUGHNESS_SURFACE_PARAMETERS (RA,RQ,RSK,RKU,RZ,RDq,RSm,Rc,Rt,Rp,Rv,UNITS, CALCULATION_TYPE,SM_SETTING,PC_SETTING)>
+<!ELEMENT RA (#PCDATA)>
+<!ELEMENT RQ (#PCDATA)>
+<!ELEMENT RSK (#PCDATA)>
+<!ELEMENT RKU (#PCDATA)>
+<!ELEMENT RZ (#PCDATA)>
+<!ELEMENT RDq (#PCDATA)>
+<!ELEMENT RSm (#PCDATA)>
+<!ELEMENT Rc (#PCDATA)>
+<!ELEMENT Rt (#PCDATA)>
+<!ELEMENT Rp (#PCDATA)>
+<!ELEMENT Rv (#PCDATA)>
+<!ELEMENT ROUGHNESS_NUMPOINTS (#PCDATA)>
+<!ELEMENT ROUGHNESS_DATA_POINT_VALUES (#PCDATA)>
+<!ELEMENT CALCULATION_TYPE (#PCDATA)>
+
+<!--
+Waviness Profile's surface parameters information
+	Wa: required. Arithmetical mean deviation of the assessed profile 
+	Wq: required. Root mean square deviation of the assessed profile 
+	Wsk: required. Skewness of the assessed profile 
+	Wku: required. Kurtosis of the assessed profile 
+	Wz: required. Maximum height of profile  
+	WDq: required. root mean square slope of the assessed profile
+	WSm: required. mean width of the profile elements
+	Wc: required. mean height of the profile elements
+	Wt: required. Total Height of Profile 
+	Wp: required. Maximum Profile Peak Height 
+	Wv: required. Maximum Profile Valley Depth 
+       UNITS: required. units m, mm, um, nm
+	WAVINESS_NUMPOINTS: required. number of data points 
+	WAVINESS_DATA_POINT_VALUES: required. waviness data points
+	CALCULATION_TYPE: required. indicate if calculation is based on the sampling length or the evaluation length 
+-->
+<!ELEMENT WAVINESS (WAVINESS_SURFACE_PARAMETERS?,WAVINESS_NUMPOINTS,WAVINESS_DATA_POINT_VALUES)>
+<!ELEMENT WAVINESS_SURFACE_PARAMETERS (WA,WQ,WSK,WKU,WZ,WDq,WSm,Wc,Wt,Wp,Wv, UNITS, CALCULATION_TYPE,SM_SETTING,PC_SETTING)>
+<!ELEMENT WA (#PCDATA)>
+<!ELEMENT WQ (#PCDATA)>
+<!ELEMENT WSK (#PCDATA)>
+<!ELEMENT WKU (#PCDATA)>
+<!ELEMENT WZ (#PCDATA)>
+<!ELEMENT WDq (#PCDATA)>
+<!ELEMENT Wt (#PCDATA)>
+<!ELEMENT Wp (#PCDATA)>
+<!ELEMENT Wv (#PCDATA)>
+<!ELEMENT WSm (#PCDATA)>
+<!ELEMENT Wc (#PCDATA)>
+<!ELEMENT WAVINESS_NUMPOINTS (#PCDATA)>
+<!ELEMENT WAVINESS_DATA_POINT_VALUES (#PCDATA)>
+
+<!--
+Statistical Analysis information
+	PSD: optional. Power Spectral Density
+	AUTOCORRELATION: optional. Auto Correlation
+-->
+<!ELEMENT STATISTICAL_ANALYSIS (PSD?,AUTOCORRELATION?)>
+
+<!--
+Power Spectral Density information
+	PSD_PROFILE_TYPE: required. indicate which type of a profile, such as primary, waviness or roughess, is applied by PSD 
+	PSD_METHOD: required. Method to calculate PSD
+	PSD_NUMPOINTS: required. Number of PSD data points
+	FREQUENCY_RESOLUTION: required. fequency resolution of PSD
+	Rq_SQUARE: required. Square of rms. This must be equal to 2 times PSD area 
+	TWO_PSD_AREA: required.  Twice Area under PSD curve
+	PSD_DATA_POINT_VALUES: required. Data points of PSD
+-->
+<!ELEMENT PSD (PSD_PROFILE_TYPE,PSD_METHOD,PSD_NUMPOINTS,FREQUENCY_RESOLUTION,Rq_SQUARE,TWO_PSD_AREA,PSD_DATA_POINT_VALUES)>
+<!ELEMENT PSD_PROFILE_TYPE (#PCDATA)>
+<!ELEMENT PSD_METHOD (#PCDATA)>
+<!ELEMENT PSD_NUMPOINTS (#PCDATA)>
+<!ELEMENT FREQUENCY_RESOLUTION (#PCDATA)>
+<!ELEMENT Rq_SQUARE (#PCDATA)>
+<!ELEMENT TWO_PSD_AREA (#PCDATA)>
+<!ELEMENT PSD_DATA_POINT_VALUES (#PCDATA)>
+
+<!--
+Power Spectral Density information
+	AUTOC_PROFILE_TYPE: required. indicate which type of a profile, such as primary, waviness or roughess, is applied by Auto Correlation 
+	AUTOC_METHOD: required. Method to calculate PSD
+	AUTOC_NUMPOINTS: required. Number of Auto Correlation data points
+	AUTOC_DATA_POINT_VALUES: required. Data points of Auto Correlation
+-->
+<!ELEMENT AUTOCORRELATION (AUTOC_PROFILE_TYPE,AUTOC_METHOD,AUTOC_NUMPOINTS,AUTOC_DATA_POINT_VALUES)>
+<!ELEMENT AUTOC_PROFILE_TYPE (#PCDATA)>
+<!ELEMENT AUTOC_METHOD (#PCDATA)>
+<!ELEMENT AUTOC_NUMPOINTS (#PCDATA)>
+<!ELEMENT AUTOC_DATA_POINT_VALUES (#PCDATA)>
