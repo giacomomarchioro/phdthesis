@@ -10,7 +10,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="533.32617"
+   width="1000"
    height="212.74969"
    id="svg2"
    version="1.1"
@@ -202,7 +202,7 @@
            x="265.5914"
            y="84.620247"
            style="font-size:18px" /></flowRegion><flowPara
-         id="flowPara5904"></flowPara></flowRoot>    <flowRoot
+         id="flowPara5904" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5906"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -226,5 +226,73 @@
            x="310.75269"
            y="321.17938" /></flowRegion><flowPara
          id="flowPara5920"
-         style="font-size:20px">working range</flowPara></flowRoot>  </g>
+         style="font-size:20px">working range</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="opacity:0.89259261000000001;fill:none;fill-opacity:0.96638656000000001;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 2;stroke-dashoffset:0"
+       id="path3022"
+       sodipodi:cx="762.9032"
+       sodipodi:cy="189.63141"
+       sodipodi:rx="87.634407"
+       sodipodi:ry="87.634407"
+       d="m 675.26879,189.6314 a 87.634407,87.634407 0 0 1 175.26882,10e-6 l -87.63441,0 z"
+       transform="translate(39.224595,82.71203)"
+       sodipodi:start="3.1415927"
+       sodipodi:end="6.2831853" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 608.60215,164.3626 392.47315,0"
+       id="path3024"
+       inkscape:connector-curvature="0"
+       transform="translate(11.267606,109.59375)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 791.39785,55.760448 0,107.526882"
+       id="path3036"
+       inkscape:connector-curvature="0"
+       transform="translate(11.267606,109.59375)"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:end="5.7438399"
+       sodipodi:start="3.6573404"
+       transform="translate(39.224595,82.71203)"
+       d="m 686.66791,146.41139 a 87.634407,87.634407 0 0 1 151.42956,-1.78677 l -75.19427,45.00679 z"
+       sodipodi:ry="87.634407"
+       sodipodi:rx="87.634407"
+       sodipodi:cy="189.63141"
+       sodipodi:cx="762.9032"
+       id="path3044"
+       style="opacity:0.89259261000000001;fill:#838383;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 2;stroke-dashoffset:0"
+       sodipodi:type="arc" />
+    <path
+       sodipodi:end="6.2831853"
+       sodipodi:start="3.1415927"
+       transform="translate(39.224595,82.71203)"
+       d="m 675.26879,189.6314 a 87.634407,87.634407 0 0 1 175.26882,10e-6 l -87.63441,0 z"
+       sodipodi:ry="87.634407"
+       sodipodi:rx="87.634407"
+       sodipodi:cy="189.63141"
+       sodipodi:cx="762.9032"
+       id="path3046"
+       style="opacity:0.89259261000000001;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       sodipodi:type="arc" />
+    <flowRoot
+       transform="translate(459.13978,53.763441)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot3856"
+       xml:space="preserve"><flowRegion
+         id="flowRegion3858"><rect
+           y="85.695518"
+           x="261.29031"
+           height="31.1828"
+           width="174.19356"
+           id="rect3860" /></flowRegion><flowPara
+         style="font-size:20px"
+         id="flowPara3862">angular coverage</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#DistanceStart);marker-end:url(#DistanceEnd)"
+       d="m 700,110.59916 c 16.61642,-27.692362 35.36266,-48.287348 90.32258,-48.3871 56.22616,0.446295 77.69662,28.540952 89.24732,49.46237"
+       id="path3868"
+       inkscape:connector-curvature="0"
+       transform="translate(11.267606,109.59375)"
+       sodipodi:nodetypes="ccc" />
+  </g>
 </svg>
