@@ -4,3 +4,5 @@ jupyter notebook/\.DS_Store
 \.DS_Store
 
 jupyter notebook/\.ipynb_checkpoints/
+
+jupyter notebook/jupyter_boilerplate
